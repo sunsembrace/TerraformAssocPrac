@@ -1,0 +1,43 @@
+1. Connected and wanted to test connection so when i did provider i also used
+data "aws_caller_identity" "current" {} 
+then i removed once i established my aws account connection was succesful.
+
+2. Create a senior level tree. 
+terraform-multi-tier-webapp/
+├── README.md
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── provider.tf
+├── terraform.tfvars
+├── backend.tf           # Remote state configuration
+├── modules/
+│   ├── networking/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
+│   │   └── security.tf   # Optional: Network ACLs, security groups
+│   ├── compute/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
+│   │   └── userdata.sh   # Optional: EC2 startup script
+│   ├── database/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
+│   │   └── security.tf   # Optional: DB-specific SGs
+│   └── storage/
+│       ├── main.tf
+│       ├── variables.tf
+│       └── outputs.tf
+├── environments/
+│   ├── dev/
+│   │   ├── main.tf      # Calls modules with dev-specific vars
+│   │   └── terraform.tfvars
+│   └── prod/
+│       ├── main.tf      # Calls modules with prod-specific vars
+│       └── terraform.tfvars
+├── scripts/
+│   └── init.sh          # Optional: bootstrap script
+└── .gitignore
