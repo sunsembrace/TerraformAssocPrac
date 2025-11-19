@@ -15,3 +15,20 @@ EBS below 30GB.
 SG has no extra cost
 Key pair (created locally has no cost)
 
+Problem solved.
+#1 # Git Cleanup and Repository Preparation
+
+During development, Terraform downloads provider binaries into the `.terraform/` folder.  
+These files can be very large (hundreds of MBs) and **should never be committed to Git**, because:
+
+- GitHub has a **100 MB file size limit** per file.  
+- Including `.terraform` in commits bloats repository size and makes collaboration difficult.  
+
+1. **Added `.gitignore`** 
+2. Removed tracked .terraform files with
+git rm -r --cached .terraform
+git commit -m "Remove Terraform binaries from tracking"
+3. Cleaned repo history since github still blocks large files in prev commits, a fresh branch repo was created to elimiante the provider binaries from the history.
+4. Force pushed clean branch
+Result
+The repository is now ready for collaboration and deployment.
