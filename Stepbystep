@@ -1,3 +1,28 @@
+Terraform Multi-Tier Web Application Infrastructure
+💡 TL;DR: PLAN
+
+1. Set up modules and files
+
+2. Build networking module
+
+3. Build compute module
+
+4. Build database module
+
+5. Build storage module
+
+6. Configure dev & prod environments
+
+7. Optional: configure remote state
+
+8. Test and deploy environments
+
+9. Write README + diagram
+
+10. Final checks & GitHub cleanup
+
+##########################
+
 1. Connected and wanted to test connection so when i did provider i also used
 data "aws_caller_identity" "current" {} 
 then i removed once i established my aws account connection was succesful.
