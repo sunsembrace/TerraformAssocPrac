@@ -13,6 +13,11 @@ variable "enable_dns_support" {
     type = string
 }
 
+variable "vpc_name" {
+    default = ""
+    type = string
+}
 variable "common_tags" {
-    default = 
+    default = ""
+    type = string
 }
