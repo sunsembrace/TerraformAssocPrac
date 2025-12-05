@@ -4,7 +4,9 @@
 4. Consider variables and inputs, and whether i'll need multiple environments. Dev, staging, prod? Impacts how variables are structured.
 5. Consider outputs like whats necessary (public ips, instance IDs) and keep other outputs agnostic for module reuse.
 6. Execution mindset, Ensure i know what terraform will do before it touches AWS.
-7.
+7. Then create VPC in networking module.tf and its variables.tf module.
+8. Then do the same for subnets.
+
 
 
 Define the ec2 purpose and what it is.

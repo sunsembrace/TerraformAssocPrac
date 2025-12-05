@@ -9,3 +9,24 @@ resource "aws_vpc" "main"{
         {name = var.vpc_name}
     )
 }
+
+#subnets
+resource "aws_subnet" "public_sn" {
+    vpc_id = aws_vpc.main.id
+    cidr_block = var.vpc_cidr
+
+    tags = merge(
+        var.common_tags,
+        {name = var.public_sn1_name}
+    )
+}
+
+resource "aws_subnet" "private_sn" {
+    vpc_id = aws_vpc.main.id
+    cidr_block = var.vpc_cidr
+
+    tags = merge(
+        var.common_tags,
+        {name = var.private_sn1_name}
+    )
+}
