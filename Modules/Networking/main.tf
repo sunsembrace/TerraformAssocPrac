@@ -30,3 +30,13 @@ resource "aws_subnet" "private_sn" {
         {name = var.private_sn1_name}
     )
 }
+
+#IGW
+resource "aws_igw" "igw"{
+    vpc_id = aws_vpc.main.id
+
+    tags = merge(
+        var.common_tags,
+        {name = var.igw_name}
+    )
+    }

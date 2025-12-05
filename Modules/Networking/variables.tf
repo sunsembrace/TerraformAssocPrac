@@ -33,3 +33,9 @@ variable "private_sn1_name" {
     default = ""
     type = string
 }
+
+#IGW
+variable "igw" {
+    default = ""
+    type = string
+}

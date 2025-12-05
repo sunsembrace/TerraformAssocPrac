@@ -10,3 +10,8 @@ output "subnet_ids" {
         aws_subnet.private_sn1.id
     ]
 }
+
+output "igw" {
+    description = ""
+    value = aws_igw.igw.id
+}
