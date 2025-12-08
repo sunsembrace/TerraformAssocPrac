@@ -1,20 +1,19 @@
-variable "count" {
-    description = ""
+variable "region" {
+    default = ""
     type = string
-}
-
-variable "ami" {
-    description = ""
-    type = string
-
 }
 
 variable "instance_type" {
-    description = ""
+    default = ""
     type = string
 }
 
-variable "subnet_ids" {
-    description = ""
+variable "instance_type_1" {
+    default = ""
+    type = string
+}
+
+variable "common_tags" {
+    default = ""
     type = string
 }
